@@ -1,4 +1,5 @@
 trigger:
+
   - master
 
 pool:
@@ -15,13 +16,7 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/TEST-*.xml'
 
-- task: Maven@3
+- task: PublishTestResults@2
   inputs:
-    mavenPomFile: 'pom.xml'
-    publishJUnitResults: true
-    testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    javaHomeOption: 'JDKVersion'
-    mavenVersionOption: 'Default'
-    mavenAuthenticateFeed: false
-    effectivePomSkip: false
-    sonarQubeRunAnalysis: false
+    testResultsFormat: 'JUnit'
+    testResultsFiles: '**/TEST-*.xml'
