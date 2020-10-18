@@ -9,7 +9,7 @@ steps:
 - task: Ant@1
   inputs:
     workingDirectory: ''
-    buildFile: 'nbbuild/testdist/release/build.xml'
+    buildFile: '/nbbuild/testdist/release/build.xml'
     options: ''
     javaHomeOption: 'JDKVersion'
     jdkVersionOption: '1.8'
